@@ -7,8 +7,8 @@ import Link from 'next/link';
 
 export const Navbar = () => {
   return (
-    <div className='flex justify-between items-center m-4 p-4 text-white'>
-        <div>Target Locked! 🎯</div>
+    <div className='flex justify-between items-center p-4 rem text-white'>
+        <div className='logs'></div>
         <div className='flex'>
             <Link href="https://github.com/AnishSharma22/Amazon-Flipkart-Product-Analyser" target='_blank'><Image src={githubLogo} className='image' alt="github logo" /></Link>
             <Link href="https://amazon.in" target='_blank'><Image src={amazonLogo} className='image' alt="amazon logo" /></Link>
