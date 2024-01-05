@@ -20,7 +20,7 @@ const amazonProductLinkSchema = z.string().refine((val) => {
 });
 
 export const Button = () => {
-  const backend_url = process.env.NEXT_PUBLIC_BACKEND_URL || 'localhost:3000';
+  const backend_url = 'backend.product.bhalu-tagda.com';
   const [link] = useRecoilState(inputBoxState);
   const [site] = useRecoilState(amazonState);
   const setLoading = useSetRecoilState(loadingState);

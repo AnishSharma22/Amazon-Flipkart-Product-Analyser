@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Navbar } from "@/components/Navbar";
 import "./main.css";
 import { Title } from "@/components/Title";
