@@ -2,7 +2,7 @@
 
 This web application and soon-to-be browser extension empower users to make informed decisions about purchasing products. By simply providing a product link from Amazon or Flipkart, users gain insights and recommendations tailored to their needs.
 
-LINK : https://amazon-flipkart-product-analyser-2z8l.vercel.app/
+LINK : https://product-recommendation-engine.vercel.app/
 
 ## Features
 
