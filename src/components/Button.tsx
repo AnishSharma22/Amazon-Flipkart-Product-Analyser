@@ -20,10 +20,10 @@ const amazonProductLinkSchema = z.string().refine((val) => {
 });
 
 export const Button = () => {
-  const backend_url = process.env.NEXT_PUBLIC_BACKEND_URL || 'localhost:3000';
+  const backend_url = process.env.NEXT_PUBLIC_BACKEND_URL || 'localhost:8000';
   const [link] = useRecoilState(inputBoxState);
   const [site] = useRecoilState(amazonState);
-  const setLoading = useSetRecoilState(loadingState);
+  const [loading,setLoading] = useRecoilState(loadingState);
 
   const setText = useSetRecoilState(textState);
   const setNotFoundState = useSetRecoilState(notFoundState);
@@ -46,7 +46,7 @@ export const Button = () => {
       
       
       setLoading(true);
-      const response = await axios.post(`https://${backend_url}/backend/api`, {
+      const response = await axios.post(`http://${backend_url}/backend/api`, {
         site: site ? 'amazon' : 'flipkart',
         link: String(link),
       });
@@ -68,12 +68,21 @@ export const Button = () => {
 
   return (
     <div className="flex justify-center items-center">
-  {site && <button className="button-85" role="button" onClick={handleGoButton}>
+    {site && (
+    <button
+      className="button-85"
+      style={loading ? { opacity: '0.3' } : {}}
+      role="button"
+      onClick={handleGoButton}
+      disabled={loading} // Disable the button if loading is true
+    >
       Go
-    </button>}
+    </button>
+  )}
+    
   {!site && (
     <div className='mt-8 p-4 mainText' style={{ backgroundColor: 'rgba(255,108,108,0.2)', borderRadius: '0.3em', color: 'rgb(255,222,222)', fontSize: '1em' }}>
-      Flipkart Servers are not responding...
+      Flipkart Servers are not currently unable to respond...
     </div>
   )}
 </div>
