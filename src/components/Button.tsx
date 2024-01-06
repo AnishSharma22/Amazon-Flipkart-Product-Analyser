@@ -46,7 +46,7 @@ export const Button = () => {
       
       
       setLoading(true);
-      const response = await axios.post(`http://${backend_url}/backend/api`, {
+      const response = await axios.post(`https://${backend_url}/backend/api`, {
         site: site ? 'amazon' : 'flipkart',
         link: String(link),
       });
