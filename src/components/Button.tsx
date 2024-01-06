@@ -82,7 +82,7 @@ export const Button = () => {
     
   {!site && (
     <div className='mt-8 p-4 mainText' style={{ backgroundColor: 'rgba(255,108,108,0.2)', borderRadius: '0.3em', color: 'rgb(255,222,222)', fontSize: '1em' }}>
-      Flipkart Servers are not currently unable to respond...
+      Flipkart Servers are currently unable to respond...
     </div>
   )}
 </div>
